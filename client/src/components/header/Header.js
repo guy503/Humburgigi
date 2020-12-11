@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const HeaderContainer = styled.header`
@@ -17,7 +18,7 @@ const HeaderContainer = styled.header`
     display: flex;
 
     border: 1px #aaa solid;
-    border-radius:15px;
+    border-radius: 15px;
 
     ul {
       align-items: center;
@@ -39,8 +40,12 @@ function Header() {
     <HeaderContainer>
       <nav>
         <ul>
-          <li>שלח סיקור</li>
-          <li>מפה</li>
+          <li>
+            <NavLink to="/send">שלח סיקור</NavLink>
+          </li>
+          <li>
+            <NavLink to="/map">מפה</NavLink>
+          </li>
           <li>המסננת</li>
           <li>הכל</li>
         </ul>
