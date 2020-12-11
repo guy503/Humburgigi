@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import burger from "../../../resorces/burger.svg";
 
-const Container = styled.main`
+const StyledContainer = styled.main`
   display: grid;
 
   img {
@@ -11,12 +11,12 @@ const Container = styled.main`
     margin: auto;
   }
 `;
-const Home = () => {
+const SendReview = () => {
   return (
-    <Container>
+    <StyledContainer>
       <img src={burger} alt="" />
-    </Container>
+    </StyledContainer>
   );
 };
 
-export default Home;
+export default SendReview;
