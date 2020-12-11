@@ -18,8 +18,6 @@ const App = () => {
     <Container className="App">
       <div style={{ height: "5rem" }} />
       <Header />
-      <Home />
-
       <Switch>
         <Route component={Home} exact path="/" />
         <Route component={Map} exact path="/map" />
