@@ -2,11 +2,12 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.header`
-    height: 10vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
 
     .list {
+        border-radius:15px;
         background: var(--header-background);
         padding: 1rem;
         text-align: center;
