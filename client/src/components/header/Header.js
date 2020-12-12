@@ -19,14 +19,16 @@ const HeaderContainer = styled.header`
 
     position: relative;
 
-    ::after {
+    ::before {
       content: "";
+      z-index:-1;
+      padding:1em;
       position: absolute;
-      border: 10px var(--complemetary-second-color) solid;
+      background-color: var(--complemetary-second-color);
       width: calc(100% - 1em);
       height: calc(100% - 1em);;
-      top: 0;
-      left: 0;
+      top: -.5em;
+      left: -.5em;
     }
     border-radius: 15px;
 
@@ -41,13 +43,6 @@ const HeaderContainer = styled.header`
       li {
         text-align: center;
         flex-grow: 1;
-      }
-
-      a{
-        text-decoration:none;
-        :visited{
-          color: var(--light-gray);
-        }
       }
     }
   }

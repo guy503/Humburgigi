@@ -3,6 +3,7 @@ import uuid from "uuid";
 import styled from "styled-components";
 import burger from "../../../resorces/burger.svg";
 import israel from "../../../resorces/white-israel-map.svg";
+import background from "../../../resorces/background.svg";
 
 const Container = styled.main`
   display: grid;
@@ -30,6 +31,7 @@ const Section = styled.article`
   padding: 5em;
   direction: rtl;
   grid-gap: 2em;
+  background-image: url(${background});
 
   ${({ section }) =>
     section != 0
@@ -67,14 +69,6 @@ const Section = styled.article`
     background: white;
     margin: 0 auto;
     border-radius: 15px;
-  }
-
-  .hr {
-    direction: rtl;
-  }
-
-  .eng {
-    direction: ltr;
   }
 
   .About {
