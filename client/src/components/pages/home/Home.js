@@ -28,26 +28,23 @@ const Section = styled.article`
   width: 100vw;
   height: 120vh;
   padding: 5em;
-  direction: rtl;
   grid-gap: 2em;
   background-image: url(${background});
 
   ${({ section }) =>
     section !== 0
-      ? "background-color: var(--secondary-color);"
-      : "background-color: var(--complementary-second-color);"}
-
-  :nth-child( even ) .card {
-    background-color: var(--secondary-color);
-    box-shadow: 20px 40px var(--thirdly-color);
-    border: 4px var(--thirdly-color) solid;
-  }
-
-  :nth-child(odd) .card {
+      ? `background-color: var(--secondary-color); 
+      .card {
     background-color: var(--complementary-second-color);
     box-shadow: 20px 40px var(--complementary-color);
     border: 2px var(--complementary-color) solid;
-  }
+  }`
+      : `background-color: var(--complementary-second-color);
+      .card {
+    background-color: var(--secondary-color);
+    box-shadow: 20px 40px var(--thirdly-color);
+    border: 4px var(--thirdly-color) solid;
+  }`}
 
   h2 {
     color: var(--thirdly-color);
@@ -66,7 +63,6 @@ const Section = styled.article`
   .card {
     width: 80%;
     max-height: calc(100vh - 200px);
-    background: white;
     margin: 0 auto;
     border-radius: 30px;
   }
