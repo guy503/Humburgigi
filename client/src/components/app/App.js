@@ -5,9 +5,10 @@ import Home from "../pages/home/Home";
 import { Switch, Route } from "react-router-dom";
 import Map from "../pages/Map/Map";
 import SendReview from "../pages/Send-Review/SendReview";
+
 const Container = styled.div`
   height: 400vh;
-  background: var(--background-app);
+  background: var(--light-gray);
   position: relative;
   background-image: url(${background});
   background-repeat: round;

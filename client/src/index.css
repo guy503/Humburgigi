@@ -21,4 +21,18 @@ code {
 :root{
   --background-header: #ffffff;
   --background-app: #F0F0F0;
+
+  /* Colors */
+
+  --main-color: #E67800;
+  --secondary-color: #FF9019;
+  --thirdly-color: #994F00;
+  --complemetary-color:#007099;
+  --complemetary-second-color:#00A9E6;
+
+  --light-gray: #e0e0e0;
+  --darker-gray: #888888;
+  --darkest-gray: #696969;
+  --black: #333;
+
 }

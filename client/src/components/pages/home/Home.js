@@ -1,4 +1,5 @@
 import react from "react";
+import uuid from "uuid";
 import styled from "styled-components";
 import burger from "../../../resorces/burger.svg";
 import israel from "../../../resorces/white-israel-map.svg";
@@ -6,11 +7,13 @@ import israel from "../../../resorces/white-israel-map.svg";
 const Container = styled.main`
   display: grid;
 
-  img {
-    display: block;
-    width: 60%;
-    height: 90vh;
-    margin: auto;
+  .scene {
+    height: calc(100vh - 180px);
+    img {
+      display: block;
+      width: 60%;
+      margin: auto;
+    }
   }
 
   ul {
@@ -28,8 +31,23 @@ const Section = styled.article`
   direction: rtl;
   grid-gap: 2em;
 
+  ${({ section }) =>
+    section != 0
+      ? "background-color: var(--secondary-color);"
+      : "background-color: var(--complemetary-second-color);"}
+
+  :nth-child( even ) .card {
+    background-color: var(--secondary-color);
+    box-shadow: 20px 40px var(--thirdly-color);
+  }
+
+  :nth-child(odd) .card {
+    background-color: var(--complemetary-second-color);
+    box-shadow: 20px 40px var(--complemetary-color);
+  }
+
   h2 {
-    color: #aaa;
+    color: var(--thirdly-color);
     text-align: center;
     padding: 0.5em;
   }
@@ -49,6 +67,14 @@ const Section = styled.article`
     background: white;
     margin: 0 auto;
     border-radius: 15px;
+  }
+
+  .hr {
+    direction: rtl;
+  }
+
+  .eng {
+    direction: ltr;
   }
 
   .About {
@@ -90,12 +116,14 @@ const Section = styled.article`
 const Home = () => {
   return (
     <Container>
-      <img src={burger} alt="" />
-      <Section>
+      <div className="scene">
+        <img src={burger} alt="" />
+      </div>
+      <Section section={0}>
         <About />
         <Top5 />
       </Section>
-      <Section>
+      <Section section={1}>
         <Map></Map>
         <Calender></Calender>
         <News></News>
@@ -108,7 +136,7 @@ const Home = () => {
 
 const About = () => {
   return (
-    <div className="About card">
+    <div className="About card hr">
       <h2>עליי</h2>
       <span />
       <p>
@@ -127,7 +155,7 @@ const About = () => {
 
 const Top5 = () => {
   return (
-    <div className="Top card">
+    <div className="Top card eng">
       <h2>Top 5</h2>
       <span />
       <ul>
@@ -143,16 +171,16 @@ const Top5 = () => {
 
 const Calender = () => {
   return (
-    <div className="Calender card">
-      <h2>Calender</h2>
+    <div className="Calender card hr">
+      <h2>לוח שנה</h2>
     </div>
   );
 };
 
 const News = () => {
   return (
-    <div className="News card">
-      <h2>News</h2>
+    <div className="News card hr">
+      <h2>חדשות</h2>
     </div>
   );
 };

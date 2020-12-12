@@ -7,7 +7,7 @@ const HeaderContainer = styled.header`
   top: 2rem;
 
   nav {
-    background: var(--background-header);
+    background-color: var(--complemetary-color);
 
     width: 40%;
     height: 5vh;
@@ -17,7 +17,17 @@ const HeaderContainer = styled.header`
 
     display: flex;
 
-    border: 1px #aaa solid;
+    position: relative;
+
+    ::after {
+      content: "";
+      position: absolute;
+      border: 10px var(--complemetary-second-color) solid;
+      width: calc(100% - 1em);
+      height: calc(100% - 1em);;
+      top: 0;
+      left: 0;
+    }
     border-radius: 15px;
 
     ul {
@@ -26,10 +36,18 @@ const HeaderContainer = styled.header`
       display: flex;
       justify-content: space-between;
       width: 100%;
+      color: var(--light-gray);
 
       li {
         text-align: center;
         flex-grow: 1;
+      }
+
+      a{
+        text-decoration:none;
+        :visited{
+          color: var(--light-gray);
+        }
       }
     }
   }
