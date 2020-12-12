@@ -5,6 +5,8 @@ import burger from "../../../resorces/burger.svg";
 import israel from "../../../resorces/white-israel-map.svg";
 import background from "../../../resorces/background.svg";
 
+///////// main home style ////////////
+
 const Container = styled.main`
   display: grid;
 
@@ -21,6 +23,8 @@ const Container = styled.main`
     list-style: decimal;
   }
 `;
+
+/////// article section style ///////////
 
 const Section = styled.article`
   display: grid;
@@ -109,6 +113,8 @@ const Section = styled.article`
     grid-column: 2;
   }
 `;
+
+/////////// component /////////////
 
 const Home = () => {
   return (
