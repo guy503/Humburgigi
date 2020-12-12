@@ -5,22 +5,19 @@ import burger from "../../../resorces/burger.svg";
 import israel from "../../../resorces/white-israel-map.svg";
 import background from "../../../resorces/background.svg";
 
-///////// main home style ////////////
+import { Controller, Scene } from "react-scrollmagic";
 
 const Container = styled.main`
+  overflow: hidden;
   display: grid;
 
   .scene {
-    height: calc(100vh - 180px);
+    height: 100vh;
     img {
       display: block;
       width: 60%;
       margin: auto;
     }
-  }
-
-  ul {
-    list-style: decimal;
   }
 `;
 
@@ -30,31 +27,26 @@ const Section = styled.article`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-
-  height: 100vh;
+  width: 100vw;
+  height: 120vh;
   padding: 5em;
-  direction: rtl;
   grid-gap: 2em;
   background-image: url(${background});
 
   ${({ section }) =>
-    section != 0
-      ? "background-color: var(--secondary-color);"
-      : "background-color: var(--complemetary-second-color);"}
-
-  :nth-child( even ) .card {
+    section !== 0
+      ? `background-color: var(--secondary-color); 
+      .card {
+    background-color: var(--complementary-second-color);
+    box-shadow: 20px 40px var(--complementary-color);
+    border: 2px var(--complementary-color) solid;
+  }`
+      : `background-color: var(--complementary-second-color);
+      .card {
     background-color: var(--secondary-color);
     box-shadow: 20px 40px var(--thirdly-color);
     border: 4px var(--thirdly-color) solid;
-
-  }
-
-  :nth-child(odd) .card {
-    background-color: var(--complemetary-second-color);
-    box-shadow: 20px 40px var(--complemetary-color);
-    border: 2px var(--complemetary-color) solid;
-
-  }
+  }`}
 
   h2 {
     color: var(--thirdly-color);
@@ -72,10 +64,9 @@ const Section = styled.article`
 
   .card {
     width: 80%;
-    max-height: calc(100vh - 10em);
-    background: white;
+    max-height: calc(100vh - 200px);
     margin: 0 auto;
-    border-radius: 15px;
+    border-radius: 30px;
   }
 
   .About {
@@ -87,7 +78,7 @@ const Section = styled.article`
   }
 
   .Top {
-    ul {
+    ol {
       padding: 2em;
       text-align: center;
 
@@ -119,18 +110,26 @@ const Section = styled.article`
 const Home = () => {
   return (
     <Container>
-      <div className="scene">
-        <img src={burger} alt="" />
-      </div>
-      <Section section={0}>
-        <About />
-        <Top5 />
-      </Section>
-      <Section section={1}>
-        <Map></Map>
-        <Calender></Calender>
-        <News></News>
-      </Section>
+      <Controller globalSceneOptions={{ triggerHook: "onLeave" }}>
+        <Scene pin>
+          <div className="scene">
+            <img src={burger} alt="" />
+          </div>
+        </Scene>
+        <Scene pin>
+          <Section section={0}>
+            <About />
+            <Top5 />
+          </Section>
+        </Scene>
+        <Scene pin>
+          <Section section={1}>
+            <Map></Map>
+            <Calender></Calender>
+            <News></News>
+          </Section>
+        </Scene>
+      </Controller>
     </Container>
   );
 };
@@ -161,13 +160,13 @@ const Top5 = () => {
     <div className="Top card eng">
       <h2>Top 5</h2>
       <span />
-      <ul>
+      <ol>
         <li>susu</li>
         <li>garage</li>
         <li>hamburgigi</li>
         <li>what</li>
         <li>yup</li>
-      </ul>
+      </ol>
     </div>
   );
 };

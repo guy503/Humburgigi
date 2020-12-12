@@ -7,7 +7,7 @@ const HeaderContainer = styled.header`
   top: 2rem;
 
   nav {
-    background-color: var(--complemetary-color);
+    background-color: var(--complementary-color);
 
     width: 40%;
     height: 5vh;
@@ -21,14 +21,14 @@ const HeaderContainer = styled.header`
 
     ::before {
       content: "";
-      z-index:-1;
-      padding:1em;
+      z-index: -1;
+      padding: 1em;
       position: absolute;
-      background-color: var(--complemetary-second-color);
+      background-color: var(--complementary-second-color);
       width: calc(100% - 1em);
-      height: calc(100% - 1em);;
-      top: -.5em;
-      left: -.5em;
+      height: calc(100% - 1em);
+      top: -0.5em;
+      left: -0.5em;
     }
     border-radius: 15px;
 
