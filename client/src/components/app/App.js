@@ -12,6 +12,7 @@ const Container = styled.div`
   position: relative;
   background-image: url(${background});
   background-repeat: round;
+  
 `;
 
 const App = () => {

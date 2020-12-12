@@ -41,11 +41,15 @@ const Section = styled.article`
   :nth-child( even ) .card {
     background-color: var(--secondary-color);
     box-shadow: 20px 40px var(--thirdly-color);
+    border: 4px var(--thirdly-color) solid;
+
   }
 
   :nth-child(odd) .card {
     background-color: var(--complemetary-second-color);
     box-shadow: 20px 40px var(--complemetary-color);
+    border: 2px var(--complemetary-color) solid;
+
   }
 
   h2 {
@@ -63,7 +67,6 @@ const Section = styled.article`
   }
 
   .card {
-    border: 1px #f00 solid;
     width: 80%;
     max-height: calc(100vh - 10em);
     background: white;
