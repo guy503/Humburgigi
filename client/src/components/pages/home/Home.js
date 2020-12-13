@@ -35,6 +35,10 @@ const Container = styled.main`
   }
 `;
 
+/*
+  TODO: creat a custom react carousel :D
+*/
+
 const Home = () => {
   return (
     <Container>
@@ -48,7 +52,7 @@ const Home = () => {
         <Top5 color="orange" />
       </CardSection>
 
-      <Section color="purple" height="calc(100vh - 200px)" >
+      <Section color="purple"  >
         <Card color="orange">
           <h3>המבורגרים של השבוע או משהו</h3>
         </Card>
