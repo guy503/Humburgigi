@@ -74,7 +74,12 @@ const Link = styled.li`
     :hover {
       width: calc(var(--nav-img-sz) * 1.2);
     }
-      .st0{fill:#3A332D;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+    .st0 {
+      fill: #3a332d;
+      stroke: #000000;
+      stroke-width: 0.5;
+      stroke-miterlimit: 10;
+    }
   }
 `;
 
