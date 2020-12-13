@@ -20,7 +20,6 @@ code {
 
 a {
   text-decoration: none;
-
 }
 
 :visited {
@@ -30,6 +29,9 @@ a {
 :root {
   --background-header: #ffffff;
   --background-app: #f0f0f0;
+
+  /* Nav Shit */
+  --nav-img-sz: 45px;
 
   /* Colors */
 

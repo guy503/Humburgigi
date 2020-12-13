@@ -1,0 +1,41 @@
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+	<style type="text/css">
+		.st0{fill:url(#SVGID_1_);stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+		.st1{fill:#91462C;}
+		.st2{fill:#FF1C00;stroke:#020202;stroke-width:0.25;stroke-miterlimit:10;}
+		.st3{fill:#61CE5B;stroke:#48C144;stroke-miterlimit:10;}
+		.st4{fill:#FF8D27;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+		.st5{fill:#B25A1F;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+		.st6{fill:#B76421;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+		.st7{fill:#FFEA2C;stroke:#FFEC00;stroke-width:0.5;stroke-miterlimit:10;}
+		.st8{fill:url(#SVGID_2_);stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	</style>
+	<defs>
+	</defs>
+
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="25.1377" y1="33.3147" x2="25.0894" y2="39.1302">
+		<stop offset="0.246" style="stop-color:#FFA14D" />
+		<stop offset="0.4484" style="stop-color:#FF8D27" />
+	</linearGradient>
+	<polygon class="st0" points="9.9,33 11.1,39.5 37.9,39.5 40.4,33 " />
+	<rect x="9.3" y="27.7" class="st1" width="32.3" height="3.3" />
+	<rect x="10.5" y="25.1" class="st2" width="13.1" height="2.6" />
+	<rect x="26.4" y="25.1" class="st2" width="13.1" height="2.6" />
+	<polyline class="st3" points="6.3,30.3 10,33 18.4,31.6 27.3,33 33.1,31.6 40.4,33 45.2,30.3 " />
+	<polygon class="st4" points="9.8,25.1 40.3,25.5 38.3,17.2 32.2,12 17.6,12 11,17.3 " />
+	<rect x="17.8" y="25.1" class="st2" width="13.1" height="2.6" />
+	<polygon class="st5" points="32.5,12 26.5,12 28.5,16.8 28.5,25 40.5,25.5 38.5,17.5 " />
+	<ellipse class="st6" cx="15.4" cy="21.8" rx="0.6" ry="0.7" />
+	<ellipse class="st6" cx="25.1" cy="15.3" rx="0.6" ry="0.7" />
+	<ellipse class="st6" cx="17.8" cy="16.6" rx="0.6" ry="0.7" />
+	<ellipse class="st6" cx="34.9" cy="17.9" rx="0.6" ry="0.7" />
+	<ellipse class="st6" cx="30" cy="19.2" rx="0.6" ry="0.7" />
+	<ellipse class="st6" cx="34.9" cy="21.8" rx="0.6" ry="0.7" />
+	<path class="st6" d="M20.1,17.4c0.3-0.5,0.9-0.7,1.5-0.4" />
+	<path class="st6" d="M30.9,16.6c0.4-0.4,1.1-0.2,1.7,0.4" />
+	<ellipse class="st6" cx="23.9" cy="21.8" rx="0.6" ry="0.7" />
+	<polygon class="st7" points="13.1,27.7 13.2,30.5 19,28 " />
+	<polygon class="st7" points="38.7,27.7 38.5,30.5 32.8,28 " />
+	<polygon class="st5" points="29.2,33 27.4,39.5 37.5,39.5 40.2,32.9 " />
+</svg>

@@ -1,11 +1,12 @@
-import react from "react";
-import uuid from "uuid";
 import styled from "styled-components";
 import burger from "../../../resorces/burger.svg";
 import israel from "../../../resorces/white-israel-map.svg";
 import background from "../../../resorces/background.svg";
 
 import { Controller, Scene } from "react-scrollmagic";
+
+import RenderBurger from "../../burger3d/Burger";
+import nameIcon from '../../../resorces/icons/name-large.svg'
 
 const Container = styled.main`
   overflow: hidden;
@@ -25,10 +26,11 @@ const Container = styled.main`
 
 const Section = styled.article`
   display: grid;
+  position: relative;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   width: 100vw;
-  height: 120vh;
+  height: 100vh;
   padding: 5em;
   grid-gap: 2em;
   background-image: url(${background});
@@ -111,11 +113,10 @@ const Home = () => {
   return (
     <Container>
       <Controller globalSceneOptions={{ triggerHook: "onLeave" }}>
-        <Scene pin>
-          <div className="scene">
-            <img src={burger} alt="" />
-          </div>
-        </Scene>
+          <Section>
+            <img src={nameIcon} alt="" style={{gridRow: 2}} />
+            <RenderBurger id='burger' />
+          </Section>
         <Scene pin>
           <Section section={0}>
             <About />

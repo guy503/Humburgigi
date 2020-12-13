@@ -1,15 +1,21 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+
+import filterIcon from "../../resorces/icons/filter.svg";
+import mapIcon from "../../resorces/icons/map.svg";
+import allIcon from "../../resorces/icons/places.svg";
+import fileIcon from "../../resorces/icons/report.svg";
 
 const HeaderContainer = styled.header`
   position: sticky;
   top: 2rem;
+  z-index: 1000;
 
   nav {
     background-color: var(--complementary-color);
 
-    width: 40%;
+    width: 50%;
     height: 5vh;
 
     margin: auto;
@@ -32,6 +38,12 @@ const HeaderContainer = styled.header`
     }
     border-radius: 15px;
 
+    h3 {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     ul {
       align-items: center;
       list-style: none;
@@ -48,19 +60,56 @@ const HeaderContainer = styled.header`
   }
 `;
 
+const Link = styled.li`
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 1em;
+  img {
+    transition: width ease-in-out 200ms;
+    width: var(--nav-img-sz);
+    :hover {
+      width: calc(var(--nav-img-sz) * 1.2);
+    }
+      .st0{fill:#3A332D;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+  }
+`;
+
 function Header() {
   return (
     <HeaderContainer>
       <nav>
         <ul>
-          <li>
-            <NavLink to="/send">שלח סיקור</NavLink>
-          </li>
-          <li>
-            <NavLink to="/map">מפה</NavLink>
-          </li>
-          <li>המסננת</li>
-          <li>הכל</li>
+          <Link>
+            <NavLink to="/send">
+              <h3>שלח סיקור</h3>
+              <img src={fileIcon} />
+            </NavLink>
+          </Link>
+
+          <Link>
+            <NavLink to="/map">
+              <h3>מפה</h3>
+              <img src={mapIcon} />
+            </NavLink>
+          </Link>
+
+          <Link>
+            <NavLink to="#">
+              <h3>המסננת</h3>
+              <img src={filterIcon} />
+            </NavLink>
+          </Link>
+
+          <Link>
+            <NavLink to="#">
+              <h3>הכל</h3>
+              <img src={allIcon} />
+            </NavLink>
+          </Link>
         </ul>
       </nav>
     </HeaderContainer>
