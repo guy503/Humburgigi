@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import background from "../../resorces/background.svg";
+import space from '../../resorces/space.svg'
 
 export const Section = styled.article`
   display: grid;
@@ -86,4 +87,17 @@ export const Section = styled.article`
   .News {
     grid-column: 2;
   }
+`;
+
+
+export const Section1 = styled.article`
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100vw;
+  height: 100vh;
+  padding: 5em;
+  grid-gap: 2em;
+  background-image: url(${space});
 `;

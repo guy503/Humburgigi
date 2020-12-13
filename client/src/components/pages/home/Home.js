@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { About, Calender, Map, News, Top5 } from "../../section/cards/Cards";
-import { Section } from "../../section/Section";
+import { Section, Section1 } from "../../section/Section";
 
 import { Controller, Scene } from "react-scrollmagic";
 
@@ -30,10 +30,10 @@ const Home = () => {
   return (
     <Container>
       <Controller globalSceneOptions={{ triggerHook: "onLeave" }}>
-        <Section>
+        <Section1>
           <img src={nameIcon} alt="" style={{ gridRow: 4 }} />
           <RenderBurger id="burger" />
-        </Section>
+        </Section1>
         <Scene pin>
           <Section section={0}>
             <About />
