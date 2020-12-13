@@ -10,7 +10,7 @@ import SendReview from "../pages/Send-Review/SendReview";
 
 
 const Container = styled.div`
-  height: 400vh;
+  min-height: 100vh;
   background: var(--light-gray);
   position: relative;
   background-image: url(${background});

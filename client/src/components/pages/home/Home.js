@@ -24,7 +24,7 @@ const Container = styled.main`
 
 /////// article section style ///////////
 
-const Section = styled.article`
+export const Section = styled.article`
   display: grid;
   position: relative;
   grid-template-columns: 1fr 1fr;
@@ -188,7 +188,7 @@ const News = () => {
   );
 };
 
-const Map = () => {
+export const Map = () => {
   return (
     <div className="Map card">
       <h2>Map</h2>
