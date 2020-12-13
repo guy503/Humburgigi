@@ -6,6 +6,7 @@ import styled from "styled-components";
 import React, { Suspense } from "react";
 
 import { useGLTF } from "@react-three/drei/";
+import { SpotLight } from "three";
 
 const Container = styled.div`
   position: absolute;
@@ -34,8 +35,8 @@ const Render = () => {
     <Container>
       <Canvas>
         <Suspense fallback={null}>
-          <ambientLight intensity={0.3} />
-
+          <ambientLight intensity={0.1} />
+          <spotLight intensity={0.2} position={[10,10,10]} />
           <Burger position={[0, 1, 0]} />
         </Suspense>
       </Canvas>

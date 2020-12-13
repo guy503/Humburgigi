@@ -27,10 +27,10 @@ const Container = styled.main`
 const Home = () => {
   return (
     <Container>
-      <Section>
+      <Section1>
         <img src={nameIcon} alt="" style={{ gridRow: 4 }} />
         <RenderBurger id="burger" />
-      </Section>
+      </Section1>
 
       <Section section={0}>
         <About />

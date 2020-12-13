@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import background from "../../resorces/background.svg";
-import space from '../../resorces/space.svg'
+import space from "../../resorces/space.svg";
+import blueStripes from "../../resorces/blue-stripes.svg";
+import orangeStripes from "../../resorces/orange-stripes.svg";
 
 export const Section = styled.article`
   display: grid;
@@ -11,17 +13,16 @@ export const Section = styled.article`
   height: 100vh;
   padding: 5em;
   grid-gap: 2em;
-  background-image: url(${background});
 
   ${({ section }) =>
     section !== 0
-      ? `background-color: var(--secondary-color); 
+      ? `background-image: url(${orangeStripes}); 
       .card {
     background-color: var(--complementary-second-color);
     box-shadow: 20px 40px var(--complementary-color);
     border: 2px var(--complementary-color) solid;
   }`
-      : `background-color: var(--complementary-second-color);
+      : `background-image: url(${blueStripes});
       .card {
     background-color: var(--secondary-color);
     box-shadow: 20px 40px var(--thirdly-color);
@@ -89,7 +90,6 @@ export const Section = styled.article`
   }
 `;
 
-
 export const Section1 = styled.article`
   display: grid;
   position: relative;
@@ -100,4 +100,6 @@ export const Section1 = styled.article`
   padding: 5em;
   grid-gap: 2em;
   background-image: url(${space});
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
