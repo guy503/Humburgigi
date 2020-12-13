@@ -1,32 +1,39 @@
 import styled from "styled-components";
 import background from "../../resorces/background.svg";
+
 import blueStripes from "../../resorces/blue-stripes.svg";
 import orangeStripes from "../../resorces/orange-stripes.svg";
+import purpleStripes from "../../resorces/purple-stripes.svg";
 
 const SectionContainer = styled.article`
   position: relative;
+  display: flex;
+  flex-direction: ${({ isCol }) => (isCol ? "collumn" : "row")};
   width: 100vw;
-  height: 100vh;
+  padding: 2%;
+
+  height: ${({ height }) => height || "100vh"};
+  background-image: ${({ color }) => {
+    switch (color) {
+      case "blue":
+        return `url(${blueStripes});`;
+
+      case "orange":
+        return `url(${orangeStripes}); `;
+
+      case "purple":
+        return `url(${purpleStripes}); `;
+      default:
+        break;
+    }
+  }};
 `;
 
 const CardSectionContainer = styled(SectionContainer)`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  padding: 2%;
   grid-gap: 2em;
-
-  ${({ color }) => {
-    switch (color) {
-      case "blue":
-        return `background-image: url(${blueStripes});`;
-
-      case "orange":
-        return `background-image: url(${orangeStripes}); `;
-      default:
-        break;
-    }
-  }}
 
   h2 {
     color: var(--thirdly-color);
@@ -63,6 +70,10 @@ export const CardSection = ({ children, color }) => {
   return <CardSectionContainer color={color}>{children}</CardSectionContainer>;
 };
 
-export const Section = ({ children }) => {
-  return <SectionContainer>{children}</SectionContainer>;
+export const Section = ({ children, height, color }) => {
+  return (
+    <SectionContainer height={height} color={color}>
+      {children}
+    </SectionContainer>
+  );
 };
