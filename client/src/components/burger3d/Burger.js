@@ -6,7 +6,8 @@ import styled from "styled-components";
 import React, { Suspense } from "react";
 
 import { useGLTF } from "@react-three/drei/";
-import { SpotLight } from "three";
+
+import space from "../../resorces/space.svg";
 
 const Container = styled.div`
   position: absolute;
@@ -15,6 +16,10 @@ const Container = styled.div`
   top: 0;
   height: inherit;
   width: inherit;
+
+  background-image: url(${space});
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const Burger = (props) => {
@@ -35,7 +40,7 @@ const Render = () => {
     <Container>
       <Canvas>
         <Suspense fallback={null}>
-          <spotLight color='#fae3ff' intensity={0.3} position={[10,10,10]} />
+          <spotLight color="#fae3ff" intensity={0.3} position={[10, 10, 10]} />
           <Burger position={[0, 0.5, 0]} />
         </Suspense>
       </Canvas>

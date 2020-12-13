@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { About, Calender, Map, News, Top5 } from "../../section/cards/Cards";
-import { Section, Section1 } from "../../section/Section";
+import { Section , Section1 } from "../../section/Section";
 
 import RenderBurger from "../../burger3d/Burger";
 import nameIcon from "../../../resorces/icons/name-large.svg";

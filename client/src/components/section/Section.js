@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import background from "../../resorces/background.svg";
-import space from "../../resorces/space.svg";
 import blueStripes from "../../resorces/blue-stripes.svg";
 import orangeStripes from "../../resorces/orange-stripes.svg";
 
@@ -88,6 +87,18 @@ export const Section = styled.article`
   .News {
     grid-column: 2;
   }
+
+  @media (max-width: 765px) {
+    display: block;
+    height: auto;
+    padding: 2em;
+
+    .card {
+      width: 90%;
+      height: fit-content;
+      margin: 0 auto 5em auto;
+    }
+  }
 `;
 
 export const Section1 = styled.article`
@@ -99,7 +110,4 @@ export const Section1 = styled.article`
   height: 100vh;
   padding: 5em;
   grid-gap: 2em;
-  background-image: url(${space});
-  background-repeat: no-repeat;
-  background-size: cover;
 `;
