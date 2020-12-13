@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { About, Calender, Map, News, Top5 } from "../../section/cards/Cards";
 import { Section } from "../../section/Section";
 
-import { Controller, Scene } from "react-scrollmagic";
-
 import RenderBurger from "../../burger3d/Burger";
 import nameIcon from "../../../resorces/icons/name-large.svg";
 
@@ -29,26 +27,23 @@ const Container = styled.main`
 const Home = () => {
   return (
     <Container>
-      <Controller globalSceneOptions={{ triggerHook: "onLeave" }}>
-        <Section>
-          <img src={nameIcon} alt="" style={{ gridRow: 4 }} />
-          <RenderBurger id="burger" />
-        </Section>
-        <Scene pin>
-          <Section section={0}>
-            <About />
-            <Top5 />
-          </Section>
-        </Scene>
-        <Scene pin>
-          <Section section={1}>
-            <Map></Map>
-            <Calender></Calender>
-            <News></News>
-          </Section>
-        </Scene>
-        {/* סקשן של איתי של מה שהוא אכל  */}
-      </Controller>
+      <Section>
+        <img src={nameIcon} alt="" style={{ gridRow: 4 }} />
+        <RenderBurger id="burger" />
+      </Section>
+
+      <Section section={0}>
+        <About />
+        <Top5 />
+      </Section>
+
+      <Section section={1}>
+        <Map></Map>
+        <Calender></Calender>
+        <News></News>
+      </Section>
+
+      {/* סקשן של איתי של מה שהוא אכל  */}
     </Container>
   );
 };
