@@ -9,6 +9,8 @@ const Map = () => {
     <StyledContainer>
       <Section section={0}>
         <StyledMap /> 
+      </Section>
+      <Section section={0}>
         <Places />
       </Section>
     </StyledContainer>
