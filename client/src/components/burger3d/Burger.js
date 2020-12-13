@@ -36,7 +36,7 @@ const Render = () => {
         <Suspense fallback={null}>
           <ambientLight intensity={0.3} />
 
-          <Burger position={[0, 0.5, 0]} />
+          <Burger position={[0, 1, 0]} />
         </Suspense>
       </Canvas>
     </Container>
