@@ -105,7 +105,7 @@ function Header() {
           </Link>
 
           <Link>
-            <NavLink to="#">
+            <NavLink to="/">
               <h3>הכל</h3>
               <img src={allIcon} />
             </NavLink>
