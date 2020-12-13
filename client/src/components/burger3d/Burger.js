@@ -11,7 +11,7 @@ const Container = styled.div`
   position: absolute;
   z-index: 1;
   left: 0;
-  top:0;
+  top: 0;
   height: inherit;
   width: inherit;
 `;
@@ -21,7 +21,6 @@ const Burger = (props) => {
   useFrame(() => {
     gltf.scene.rotateX(0.01);
     gltf.scene.rotateZ(0.009);
-
   });
   return (
     <mesh>
@@ -37,7 +36,7 @@ const Render = () => {
         <Suspense fallback={null}>
           <ambientLight intensity={0.3} />
 
-          <Burger position={[0, 0, 0]} />
+          <Burger position={[0, 0.5, 0]} />
         </Suspense>
       </Canvas>
     </Container>
