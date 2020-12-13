@@ -6,7 +6,7 @@ import background from "../../../resorces/background.svg";
 import { Controller, Scene } from "react-scrollmagic";
 
 import RenderBurger from "../../burger3d/Burger";
-import nameIcon from '../../../resorces/icons/name-large.svg'
+import nameIcon from "../../../resorces/icons/name-large.svg";
 
 const Container = styled.main`
   overflow: hidden;
@@ -42,12 +42,14 @@ const Section = styled.article`
     background-color: var(--complementary-second-color);
     box-shadow: 20px 40px var(--complementary-color);
     border: 2px var(--complementary-color) solid;
+   
   }`
       : `background-color: var(--complementary-second-color);
       .card {
     background-color: var(--secondary-color);
     box-shadow: 20px 40px var(--thirdly-color);
     border: 4px var(--thirdly-color) solid;
+    
   }`}
 
   h2 {
@@ -113,10 +115,10 @@ const Home = () => {
   return (
     <Container>
       <Controller globalSceneOptions={{ triggerHook: "onLeave" }}>
-          <Section>
-            <img src={nameIcon} alt="" style={{gridRow: 2}} />
-            <RenderBurger id='burger' />
-          </Section>
+        <Section>
+          <img src={nameIcon} alt="" style={{ gridRow: 4 }} />
+          <RenderBurger id="burger" />
+        </Section>
         <Scene pin>
           <Section section={0}>
             <About />

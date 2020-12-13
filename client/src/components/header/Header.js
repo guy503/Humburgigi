@@ -70,11 +70,16 @@ const Link = styled.li`
   margin: 1em;
   img {
     transition: width ease-in-out 200ms;
-    width: var(--nav-img-sz);
+    width: {navImgized};
     :hover {
       width: calc(var(--nav-img-sz) * 1.2);
     }
-      .st0{fill:#3A332D;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+    .st0 {
+      fill: #3a332d;
+      stroke: #000000;
+      stroke-width: 0.5;
+      stroke-miterlimit: 10;
+    }
   }
 `;
 
