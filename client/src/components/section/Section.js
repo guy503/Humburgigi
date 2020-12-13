@@ -65,6 +65,8 @@ export const Section = styled.article`
       padding: 2em;
       text-align: center;
 
+      list-style-position: inside;
+
       li {
         font-size: 2em;
       }
