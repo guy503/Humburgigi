@@ -21,6 +21,8 @@ const Container = styled.div`
 
   transition: ease-in-out 300ms all;
 
+  height: calc( var(--nav-img-sz) + 0.5em );
+
   img {
     max-width: var(--nav-img-sz);
     margin: 0.5em;
