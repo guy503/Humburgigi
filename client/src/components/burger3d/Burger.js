@@ -7,8 +7,6 @@ import React, { Suspense } from "react";
 
 import { useGLTF } from "@react-three/drei/";
 
-import space from "../../resorces/space.svg";
-
 const Container = styled.div`
   position: absolute;
   z-index: 1;
@@ -16,17 +14,16 @@ const Container = styled.div`
   top: 0;
   height: inherit;
   width: inherit;
-
-  background-image: url(${space});
-  background-repeat: no-repeat;
-  background-size: cover;
 `;
 
 const Burger = (props) => {
   const gltf = useGLTF(burgerModel, true);
+  const rotate = props.rotate;
+
   useFrame(() => {
-    gltf.scene.rotateX(0.01);
-    gltf.scene.rotateZ(0.009);
+    gltf.scene.rotateX(rotate[0]);
+    gltf.scene.rotateY(rotate[1]);
+    gltf.scene.rotateZ(rotate[2]);
   });
   return (
     <mesh>
@@ -35,13 +32,14 @@ const Burger = (props) => {
   );
 };
 
-const Render = () => {
+const Render = ({ position = [0, -0.2, 0], rotate = [0.01, 0, 0.01], ambientLight=undefined }) => {
   return (
     <Container>
       <Canvas>
         <Suspense fallback={null}>
+          { ambientLight ? <ambientLight intensity={0.2} color='#FFFFFF' /> : null }
           <spotLight color="#fae3ff" intensity={0.3} position={[10, 10, 10]} />
-          <Burger position={[0, 0.5, 0]} />
+          <Burger position={position} rotate={rotate} />
         </Suspense>
       </Canvas>
     </Container>

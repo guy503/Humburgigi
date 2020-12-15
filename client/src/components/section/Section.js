@@ -1,18 +1,36 @@
 import styled from "styled-components";
-import background from "../../resorces/background.svg";
 
-import blueStripes from "../../resorces/blue-stripes.svg";
-import orangeStripes from "../../resorces/orange-stripes.svg";
-import purpleStripes from "../../resorces/purple-stripes.svg";
+import blueStripes from "../../resorces/background/blue-stripes.svg";
+import orangeStripes from "../../resorces/background/orange-stripes.svg";
+import purpleStripes from "../../resorces/background/purple-stripes.svg";
+import space from "../../resorces/background/space.svg";
+import earth from "../../resorces/background/earth.svg";
+
+import earth765 from "../../resorces/background/earth765.svg";
 
 const SectionContainer = styled.article`
   position: relative;
   display: flex;
-  flex-direction: ${({ isCol }) => (isCol ? "collumn" : "row")};
+  flex-direction: ${({ isCol }) => (isCol ? "column" : "row")};
   width: 100vw;
   padding: 2%;
 
+  span {
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    width: 50%;
+    background: black;
+  }
+
+  h2 {
+    color: var(--thirdly-color);
+    text-align: center;
+    padding: 0.5em;
+  }
+
   height: ${({ height }) => height || "100vh"};
+
   background-image: ${({ color }) => {
     switch (color) {
       case "blue":
@@ -23,10 +41,36 @@ const SectionContainer = styled.article`
 
       case "purple":
         return `url(${purpleStripes}); `;
+
+      case "space":
+        return `url(${space});
+                background-repeat: no-repeat;
+                background-size: cover;`;
+      case "earth":
+        return `url(${earth});   
+                background-repeat: no-repeat;
+                background-size: cover;`;
       default:
-        break;
+        return ";";
     }
-  }};
+  }}}
+
+  @media (max-width: 675px){
+    background-image: ${({ color }) => {
+      switch (color) {
+        case "space":
+          return `url(${space});
+                background-repeat: no-repeat;
+                background-size: cover;`;
+        case "earth":
+          return `url(${earth765});   
+                background-repeat: no-repeat;
+                background-size: cover;`;
+        default:
+          return ";";
+      }
+    }}}
+
 `;
 
 const CardSectionContainer = styled(SectionContainer)`
@@ -35,28 +79,20 @@ const CardSectionContainer = styled(SectionContainer)`
   grid-template-rows: 1fr 1fr;
   grid-gap: 2em;
 
-  h2 {
-    color: var(--thirdly-color);
-    text-align: center;
-    padding: 0.5em;
-  }
-
-  span {
-    height: 2px;
-    margin: 0 auto;
-    display: block;
-    width: 50%;
-    background: black;
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   .scroll {
     overflow-y: scroll;
   }
 
-  @media (max-width: 765px) {
-    display: block;
-    height: auto;
-    padding: 2em;
+  .mobile {
+    background-image: ${({ color }) => `url(${color + "-sz"})`};
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   @media (max-width: 765px) {
@@ -70,10 +106,6 @@ export const CardSection = ({ children, color }) => {
   return <CardSectionContainer color={color}>{children}</CardSectionContainer>;
 };
 
-export const Section = ({ children, height, color }) => {
-  return (
-    <SectionContainer height={height} color={color}>
-      {children}
-    </SectionContainer>
-  );
+export const Section = (props) => {
+  return <SectionContainer {...props}>{props.children}</SectionContainer>;
 };

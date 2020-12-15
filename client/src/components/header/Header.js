@@ -7,10 +7,12 @@ import allIcon from "../../resorces/icons/places.svg";
 import fileIcon from "../../resorces/icons/report.svg";
 
 const HeaderContainer = styled.header`
-  position: absolute;
   width: 100%;
-
-  nav {
+  height:25vh;
+  background-image: ${({ background }) => {
+      return background ? background : ";";
+    }}
+    nav {
     position: relative;
     background-color: var(--complementary-color);
     border: var(--complementary-second-color) solid 2px;
@@ -50,8 +52,6 @@ const HeaderContainer = styled.header`
 `;
 
 const Link = styled.li`
-
-
   justify-content: space-between;
   align-items: center;
 
@@ -59,10 +59,8 @@ const Link = styled.li`
 
   /* margin: 1em; */
   img {
-    
     transition: width ease-in-out 200ms;
     max-width: var(--nav-img-sz);
-
 
     :hover {
       width: calc(var(--nav-img-sz) * 1.2);
@@ -74,8 +72,8 @@ const Link = styled.li`
       stroke-miterlimit: 10;
     }
 
-    h4{
-      position:absolute;
+    h4 {
+      position: absolute;
     }
   }
 `;
@@ -90,7 +88,7 @@ function Header() {
           <Link>
             <NavLink onClick={() => setSelected(0)} to="/send">
               <h3>שלח סיקור</h3>
-              <img src={fileIcon} />
+              <img src={fileIcon} alt="form" />
               {selected === 0 ? <h4>*</h4> : null}
             </NavLink>
           </Link>
@@ -98,7 +96,7 @@ function Header() {
           <Link>
             <NavLink onClick={() => setSelected(1)} to="/map">
               <h3>מפה</h3>
-              <img src={mapIcon} />
+              <img src={mapIcon} alt="map" />
               {selected === 1 ? <h3>*</h3> : null}
             </NavLink>
           </Link>
@@ -106,7 +104,7 @@ function Header() {
           <Link>
             <NavLink onClick={() => setSelected(3)} to="/">
               <h3>הכל</h3>
-              <img src={allIcon} />
+              <img src={allIcon} alt="all" />
               {selected === 3 ? <h3>*</h3> : null}
             </NavLink>
           </Link>

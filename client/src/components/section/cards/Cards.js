@@ -1,11 +1,12 @@
-import burger from "../../../resorces/burger.svg";
 import israel from "../../../resorces/white-israel-map.svg";
 import { v4 } from "uuid";
 import styled from "styled-components";
 
 const CardContainer = styled.div`
   width: 80%;
-  max-height: calc(100vh - 200px);
+  max-height: calc(
+    100vh - 40px - 2em
+  ); // -40px for drop shadow  -2em for container padding
   margin: 0 auto;
   border-radius: 30px;
   padding: 2em;
@@ -23,6 +24,7 @@ const CardContainer = styled.div`
           box-shadow: 20px 40px var(--thirdly-color);
           border: 4px var(--thirdly-color) solid;`;
       default:
+        return `background-color: rgba(255,255,255,0.5);`;
         break;
     }
   }}
@@ -40,20 +42,38 @@ export const Card = ({ color, children }) => {
   return <CardContainer color={color}>{children}</CardContainer>;
 };
 
+//////////////////// Page Info //////////////////
+
+const PageInfoContainer = styled(CardContainer)``;
+
+export const PageInfo = (props) => {
+  return (
+    <PageInfoContainer className="hr" {...props}>
+      <h2>{props.heading}</h2>
+      <span />
+      <p>{props.info}</p>
+    </PageInfoContainer>
+  );
+};
+
 //////////////////// Honorable //////////////////
 
 const HonorableContainer = styled(CardContainer)`
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   width: 100%;
 
+  .hsection {
+    grid-row: 2;
+  }
 `;
 
 export const Honorable = ({ image, location, name, rating, scoop, color }) => {
   return (
     <HonorableContainer color={color}>
       <img src={image} alt="Honorable" />
-      <section>
+      <section className="hsection">
         <h3>{name}</h3>
         <h3>{location}</h3>
       </section>
@@ -67,11 +87,11 @@ export const Honorable = ({ image, location, name, rating, scoop, color }) => {
 const AboutContainer = styled(CardContainer)`
   p {
     overflow-y: scroll;
-    max-height: 80%;
+    max-height: calc(100vh - 200px - 6em);
   }
 `;
 
-export const About = ({ color , info , title }) => {
+export const About = ({ color, info, title }) => {
   return (
     <AboutContainer color={color} className="About card hr">
       <h2>עליי</h2>
