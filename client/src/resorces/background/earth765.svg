@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg enable-background="new 0 0 768 1024" version="1.1" viewBox="0 0 768 1024" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+	<style type="text/css">
+		.st0{fill:#0C1F36;}
+		.st1{opacity:0.28;fill:#A6E8FF;}
+		.st2{fill:#B5FBFF;}
+		.st3{fill:#79D879;}
+		.st4{fill:#FF1515;}
+		.st5{fill:#A6E8FF;}
+		.st6{fill:none;stroke:#FFD0A6;stroke-width:11;stroke-miterlimit:10;}
+		.st7{fill:#DBDBDB;}
+		.st8{fill:#BFBFBF;stroke:#777777;stroke-miterlimit:10;}
+		.st9{fill:#66CC33;}
+		.st10{opacity:0.5;fill:#55CBFF;}
+		.st11{fill:#0C1F36;stroke:#777777;stroke-width:5;stroke-miterlimit:10;}
+		.st12{fill:#FF9019;stroke:#FFD0A6;stroke-miterlimit:10;}
+	</style>
+	<rect class="st0" width="768" height="1024" />
+	<path class="st1" d="m768 63s-459.8 211.1-480.9 411.3 413.5 548.9 413.5 548.9l60.4-233.6s-313.6-227.8-306.9-345.1 313.9-305.5 313.9-305.5" />
+	<path class="st2" d="M768,723c-180.7-73.4-421.7-98-677.5-55.9C60.9,671.9,28.6,677.6,0,684v340h768V723z" />
+	<path class="st3" d="M0,941c0.4,0,61-0.1,61.5-0.2C356.2,913.7,210.7,713.8,0,704" />
+	<path class="st3" d="m768 739s-396 27.8-343.4 150.1c27.4 63.7 218.6 79.5 343.4 90.9" />
+	<polygon class="st4" points="145.5 821.4 99.3 732.8 81.4 798.4 120.7 778 143.8 822.3" />
+	<polygon class="st4" points="598.6 853.6 671 746.5 684.4 833.3 636.8 801.4 600.7 854.9" />
+	<polygon class="st5" points="173.6 281 210.4 292.6 173 289.3 160.4 324.6 164.4 286.9 128.3 274.8 165.7 278.1 178.2 242.8" />
+	<polygon class="st5" points="634 478.3 670.2 464.9 638.7 485.2 650.6 520.8 630.4 488.6 594.5 501.2 626 480.8 614.1 445.3" />
+	<path class="st6" d="m392 390.9" />
+	<ellipse class="st7" cx="128.4" cy="482.8" rx="95.4" ry="28.9" />
+	<ellipse class="st8" cx="130.1" cy="489.4" rx="48" ry="18.3" />
+	<path class="st9" d="m150.3 445.5v11.8s-3.8-5.9-5.9-5.9c-4.3 0-9.5-2.6-9.5-5.9s3.4-5.9 7.7-5.9 7.7 2.7 7.7 5.9z" />
+	<path class="st9" d="m107.3 446.8c0.2 1.6 1.7 11.7 1.7 11.7s2.9-6.4 5-6.7c4.2-0.6 9-4 8.5-7.2s-4.3-5.4-8.5-4.7c-4.1 0.5-7.1 3.7-6.7 6.9z" />
+	<path class="st10" d="m128.4 451.5c22.8-0.1 43.8 2.3 60.2 6.3 0.5-1.3 0.8-2.7 0.8-4.1 0-13-24.2-23.5-54-23.4s-53.8 10.7-53.8 23.7c0 0.5 0 0.9 0.1 1.3 13.8-2.3 29.8-3.7 46.7-3.8z" />
+	<ellipse class="st11" cx="130.1" cy="477.5" rx="7.1" ry="7.1" />
+	<ellipse class="st12" cx="130.1" cy="469.2" rx="7.1" ry="7.1" />
+</svg>

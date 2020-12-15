@@ -1,21 +1,16 @@
-import styled from "styled-components";
-import burger from "../../../resorces/burger.svg";
+import Editor from "../../editor/Editor";
+import { Section } from "../../section/Section";
+import { Card, PageInfo } from "../../section/cards/Cards";
 
-const StyledContainer = styled.main`
-  display: grid;
 
-  img {
-    display: block;
-    width: 60%;
-    max-height: 60vh;
-    margin: auto;
-  }
-`;
 const SendReview = () => {
   return (
-    <StyledContainer>
-      <img src={burger} alt="" />
-    </StyledContainer>
+    <Section isCol={true} color="blue">
+      <PageInfo heading='כתיבת מאמר' info=' כאן רושמים את כל הדברים החמודים על העמוד' />
+      <Card color="orange">
+        <Editor />
+      </Card>
+    </Section>
   );
 };
 

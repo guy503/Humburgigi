@@ -1,10 +1,99 @@
-import burger from "../../../resorces/burger.svg";
 import israel from "../../../resorces/white-israel-map.svg";
 import { v4 } from "uuid";
+import styled from "styled-components";
 
-export const About = () => {
+const CardContainer = styled.div`
+  width: 80%;
+  max-height: calc(
+    100vh - 40px - 2em
+  ); // -40px for drop shadow  -2em for container padding
+  margin: 0 auto;
+  border-radius: 30px;
+  padding: 2em;
+
+  ${({ color }) => {
+    switch (color) {
+      case "blue":
+        return `
+          background-color: var(--complementary-second-color);
+          box-shadow: 20px 40px var(--complementary-color);
+          border: 2px var(--complementary-color) solid;`;
+      case "orange":
+        return `
+          background-color: var(--secondary-color);
+          box-shadow: 20px 40px var(--thirdly-color);
+          border: 4px var(--thirdly-color) solid;`;
+      default:
+        return `background-color: rgba(255,255,255,0.5);`;
+        break;
+    }
+  }}
+
+  @media (max-width: 765px) {
+    width: 90%;
+    height: fit-content;
+    margin: 0 auto 5em auto;
+  }
+`;
+
+///////////////////// Card //////////////////////
+
+export const Card = ({ color, children }) => {
+  return <CardContainer color={color}>{children}</CardContainer>;
+};
+
+//////////////////// Page Info //////////////////
+
+const PageInfoContainer = styled(CardContainer)``;
+
+export const PageInfo = (props) => {
   return (
-    <div className="About card hr">
+    <PageInfoContainer className="hr" {...props}>
+      <h2>{props.heading}</h2>
+      <span />
+      <p>{props.info}</p>
+    </PageInfoContainer>
+  );
+};
+
+//////////////////// Honorable //////////////////
+
+const HonorableContainer = styled(CardContainer)`
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 100%;
+
+  .hsection {
+    grid-row: 2;
+  }
+`;
+
+export const Honorable = ({ image, location, name, rating, scoop, color }) => {
+  return (
+    <HonorableContainer color={color}>
+      <img src={image} alt="Honorable" />
+      <section className="hsection">
+        <h3>{name}</h3>
+        <h3>{location}</h3>
+      </section>
+      <p>{scoop}</p>
+    </HonorableContainer>
+  );
+};
+
+//////////////////// About /////////////////////
+
+const AboutContainer = styled(CardContainer)`
+  p {
+    overflow-y: scroll;
+    max-height: calc(100vh - 200px - 6em);
+  }
+`;
+
+export const About = ({ color, info, title }) => {
+  return (
+    <AboutContainer color={color} className="About card hr">
       <h2>עליי</h2>
       <span />
       <p>
@@ -17,13 +106,26 @@ export const About = () => {
         felis in arcu. Morbi sit amet felis erat. Quisque a feugiat turpis.
         Quisque ornare vehicula bibendum. Morbi nec sollicitudin ipsum.
       </p>
-    </div>
+    </AboutContainer>
   );
 };
 
-export const Top5 = () => {
+//////////////////// Top5 /////////////////////
+
+const Top5Container = styled(CardContainer)`
+  ul {
+    padding: 2em;
+    text-align: center;
+
+    li {
+      font-size: 2em;
+    }
+  }
+`;
+
+export const Top5 = ({ color }) => {
   return (
-    <div className="Top card eng">
+    <Top5Container color={color} className="eng">
       <h2>Top 5</h2>
       <span />
       <ol>
@@ -33,47 +135,66 @@ export const Top5 = () => {
         <li>what</li>
         <li>yup</li>
       </ol>
-    </div>
+    </Top5Container>
   );
 };
 
-export const Calender = () => {
+//////////////////// Calender /////////////////////
+
+const CalenderContainer = styled(CardContainer)``;
+
+export const Calender = ({ color }) => {
   return (
-    <div className="Calender card hr">
+    <CalenderContainer color={color} className="hr">
       <h2>לוח שנה</h2>
-    </div>
+    </CalenderContainer>
   );
 };
 
-export const News = () => {
+//////////////////// News /////////////////////
+
+const NewsContainer = styled(CardContainer)`
+  grid-column: 2;
+`;
+
+export const News = ({ color }) => {
   return (
-    <div className="News card hr">
+    <NewsContainer color={color} className="hr">
       <h2>חדשות</h2>
-    </div>
+    </NewsContainer>
   );
 };
 
-export const Map = () => {
+//////////////////// Map /////////////////////
+
+const MapContainer = styled(CardContainer)`
+  grid-row: 1/3;
+  height: 100%;
+  width: 100%;
+
+  img {
+    display: block;
+    height: 80%;
+    width: auto;
+    object-fit: contain;
+  }
+`;
+
+export const Map = ({ color }) => {
   return (
-    <div className="Map card">
-      <h2>Map</h2>
+    <MapContainer color={color}>
+      <h2>מפה</h2>
       <span />
       <img src={israel} alt="map" />
-    </div>
+    </MapContainer>
   );
 };
 
-const Place = ({ name, rate, location }) => {
-  return (
-    <li>
-      <h4>{name}</h4>
-      <h4>{rate}</h4>
-      <h4>{location}</h4>
-    </li>
-  );
-};
+//////////////////// Places /////////////////////
 
-export const Places = () => {
+const PlacesContainer = styled(CardContainer)``;
+
+export const Places = ({ color }) => {
   // Api call
 
   /* 
@@ -112,7 +233,7 @@ export const Places = () => {
   // Cross With blogs places t:O(n) p:O(1)
 
   return (
-    <div className="Places card hr">
+    <PlacesContainer color={color} className="hr">
       <h2>מקומות</h2>
       <span />
       <ul className="scroll">
@@ -120,6 +241,16 @@ export const Places = () => {
           return <Place {...place} key={v4()} />;
         })}
       </ul>
-    </div>
+    </PlacesContainer>
+  );
+};
+
+const Place = ({ name, rate, location }) => {
+  return (
+    <li>
+      <h4>{name}</h4>
+      <h4>{rate}</h4>
+      <h4>{location}</h4>
+    </li>
   );
 };

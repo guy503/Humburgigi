@@ -1,15 +1,24 @@
 import styled from "styled-components";
-import { Map as StyledMap , Places} from '../../section/cards/Cards'
-import { Section } from '../../section/Section'
+import RenderBurger from "../../burger3d/Burger";
+import { Card, Places } from "../../section/cards/Cards";
+import { Section } from "../../section/Section";
 
-const StyledContainer = styled.main`
-`;
+const StyledContainer = styled.main``;
 const Map = () => {
   return (
     <StyledContainer>
-      <Section section={0}>
-        <StyledMap /> 
-        <Places />
+      <Section color="earth">
+        <RenderBurger
+          rotate={[0, 0.01, 0]}
+          position={[0, -1, 0]}
+          ambientLight
+        />
+      </Section>
+      <Section color="blue">
+        <Card color="orange"></Card>
+      </Section>
+      <Section color="blue">
+        <Places color="orange" />
       </Section>
     </StyledContainer>
   );

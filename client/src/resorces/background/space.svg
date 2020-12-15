@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg enable-background="new 0 0 1920 1277" version="1.1" viewBox="0 0 1920 1277" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+	<style type="text/css">
+		.st0{fill:#0C1F36;}
+		.st1{fill:url(#b);}
+		.st2{fill:url(#a);}
+		.st3{opacity:0.64;fill:#0C1F36;}
+		.st4{opacity:0.48;fill:#55CBFF;}
+		.st5{opacity:0.18;fill:#55CBFF;}
+		.st6{fill:#A6E8FF;}
+		.st7{fill:url(#SVGID_3_);}
+		.st8{fill:url(#SVGID_4_);}
+	</style>
+	<polyline class="st0" points="1920 0 0 0 0 1273.5 1920 1273.5 1920 0" />
+	<linearGradient id="b" x1="-60.437" x2="1439.9" y1="966.33" y2="374.5" gradientUnits="userSpaceOnUse">
+		<stop stop-color="#7D3C8B" offset="1.3319e-7" />
+		<stop stop-color="#371E3D" stop-opacity=".4" offset=".9584" />
+	</linearGradient>
+	<path class="st1" d="m1467 0s-601 103.8-613 452.8 251-11.8 251-11.8 46-76.6 161 25.9-85 601.4-85 601.4-73 167.4 157 186.3 212 18.9 212 18.9h-1550v-1273.5h1467z" />
+	<linearGradient id="a" x1="-136.16" x2="1025.1" y1="912.15" y2="454.07" gradientUnits="userSpaceOnUse">
+		<stop stop-color="#7D3C8B" offset=".0044695" />
+		<stop stop-opacity=".4" offset=".9584" />
+	</linearGradient>
+	<path class="st2" d="m197.8 0c6.2 17.5 68.2 721.8 529.2 861.5 0 0 190 86.2 341-123.4s-45 392.3-45 392.3 0.8 82.7 116.4 126.9-1139.4 0-1139.4 0v-1257.3h197.8z" />
+	<polygon class="st3" points="0 511.7 646 1273.5 0 1273.8" />
+	<path class="st4" d="M1550,0c0,0-290,375,90,558.9s57,241.7,108,424.5s172,192.2,172,192.2V0H1550z" />
+	<path class="st5" d="M1671.5,0c0,0-187.7,361,58.3,538.2s36.9,232.8,69.9,408.7c33,176,111.3,185.1,111.3,185.1V0H1671.5z" />
+	<polygon class="st6" points="1259 140.8 1274.8 97.7 1268.9 142 1310.3 158.8 1265.5 152 1249.2 194.3 1255.1 150 1213.7 133.2" />
+	<polygon class="st6" points="1324 276 1359.4 246.6 1332 282 1359.4 317.4 1324 289 1288.6 317.4 1316 282 1288.6 246.6" />
+	<polygon class="st6" points="1731 1170 1766.4 1140.6 1739 1176 1766.4 1211.4 1731 1183 1695.6 1211.4 1723 1176 1695.6 1140.6" />
+</svg>

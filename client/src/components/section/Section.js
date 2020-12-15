@@ -1,37 +1,19 @@
 import styled from "styled-components";
-import background from "../../resorces/background.svg";
 
-export const Section = styled.article`
-  display: grid;
+import blueStripes from "../../resorces/background/blue-stripes.svg";
+import orangeStripes from "../../resorces/background/orange-stripes.svg";
+import purpleStripes from "../../resorces/background/purple-stripes.svg";
+import space from "../../resorces/background/space.svg";
+import earth from "../../resorces/background/earth.svg";
+
+import earth765 from "../../resorces/background/earth765.svg";
+
+const SectionContainer = styled.article`
   position: relative;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  display: flex;
+  flex-direction: ${({ isCol }) => (isCol ? "column" : "row")};
   width: 100vw;
-  height: 100vh;
-  padding: 5em;
-  grid-gap: 2em;
-  background-image: url(${background});
-
-  ${({ section }) =>
-    section !== 0
-      ? `background-color: var(--secondary-color); 
-      .card {
-    background-color: var(--complementary-second-color);
-    box-shadow: 20px 40px var(--complementary-color);
-    border: 2px var(--complementary-color) solid;
-  }`
-      : `background-color: var(--complementary-second-color);
-      .card {
-    background-color: var(--secondary-color);
-    box-shadow: 20px 40px var(--thirdly-color);
-    border: 4px var(--thirdly-color) solid;
-  }`}
-
-  h2 {
-    color: var(--thirdly-color);
-    text-align: center;
-    padding: 0.5em;
-  }
+  padding: 2%;
 
   span {
     height: 2px;
@@ -41,51 +23,89 @@ export const Section = styled.article`
     background: black;
   }
 
-  .card {
-    width: 80%;
-    max-height: calc(100vh - 200px);
-    margin: 0 auto;
-    border-radius: 30px;
+  h2 {
+    color: var(--thirdly-color);
+    text-align: center;
+    padding: 0.5em;
   }
 
-  .About {
-    p {
-      padding: 2em;
-      overflow-y: scroll;
-      max-height: 80%;
+  height: ${({ height }) => height || "100vh"};
+
+  background-image: ${({ color }) => {
+    switch (color) {
+      case "blue":
+        return `url(${blueStripes});`;
+
+      case "orange":
+        return `url(${orangeStripes}); `;
+
+      case "purple":
+        return `url(${purpleStripes}); `;
+
+      case "space":
+        return `url(${space});
+                background-repeat: no-repeat;
+                background-size: cover;`;
+      case "earth":
+        return `url(${earth});   
+                background-repeat: no-repeat;
+                background-size: cover;`;
+      default:
+        return ";";
     }
+  }}}
+
+  @media (max-width: 675px){
+    background-image: ${({ color }) => {
+      switch (color) {
+        case "space":
+          return `url(${space});
+                background-repeat: no-repeat;
+                background-size: cover;`;
+        case "earth":
+          return `url(${earth765});   
+                background-repeat: no-repeat;
+                background-size: cover;`;
+        default:
+          return ";";
+      }
+    }}}
+
+`;
+
+const CardSectionContainer = styled(SectionContainer)`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 2em;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   .scroll {
     overflow-y: scroll;
   }
 
-  .Top {
-    ol {
-      padding: 2em;
-      text-align: center;
-
-      list-style-position: inside;
-
-      li {
-        font-size: 2em;
-      }
-    }
+  .mobile {
+    background-image: ${({ color }) => `url(${color + "-sz"})`};
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
-  .Map {
-    grid-row: 1/3;
-    height: 100%;
-    width: 100%;
-
-    img {
-      display: block;
-      height: 80%;
-      width: auto;
-      object-fit: contain;
-    }
-  }
-  .News {
-    grid-column: 2;
+  @media (max-width: 765px) {
+    display: block;
+    height: auto;
+    padding: 2em;
   }
 `;
+
+export const CardSection = ({ children, color }) => {
+  return <CardSectionContainer color={color}>{children}</CardSectionContainer>;
+};
+
+export const Section = (props) => {
+  return <SectionContainer {...props}>{props.children}</SectionContainer>;
+};
